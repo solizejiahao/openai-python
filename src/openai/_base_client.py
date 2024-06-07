@@ -954,6 +954,7 @@ class SyncAPIClient(BaseClient[httpx.Client, Stream[Any]]):
                 stream=stream or self._should_stream_response_body(request=request),
                 **kwargs,
             )
+            print('ここでラッパー')
         except httpx.TimeoutException as err:
             log.debug("Encountered httpx.TimeoutException", exc_info=True)
 
